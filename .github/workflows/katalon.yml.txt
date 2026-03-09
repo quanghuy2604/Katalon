@@ -1,4 +1,4 @@
-name: Run Katalon Tests
+name: Run Katalon HL
 
 on:
   push:
