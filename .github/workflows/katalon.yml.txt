@@ -21,6 +21,6 @@ jobs:
           args: >
             -noSplash
             -runMode=console
-            -projectPath="Katalon.prj"
+            -projectPath="shopping-cart-tests.prj"
             -testSuitePath="Test Suites/Order and check out with Global Variable"
             -browserType="Chrome"
