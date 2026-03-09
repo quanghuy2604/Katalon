@@ -3,7 +3,7 @@ name: Run Katalon HL
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   katalon-test:
