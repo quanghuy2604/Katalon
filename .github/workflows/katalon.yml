@@ -23,7 +23,7 @@ jobs:
           args: >
             -noSplash
             -retry=0
-            -testSuitePath="Test Suites/Shopping-cart-tests - Run All Test Suites"
+            -testSuitePath="Test Suites/Order and check out with Global Variable"
             -browserType="Chrome (headless)"
             -executionProfile="default"
             -apiKey=${{ secrets.KATALON_API_KEY }}
