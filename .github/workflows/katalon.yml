@@ -1,0 +1,38 @@
+name: Katalon CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+  workflow_dispatch:
+
+jobs:
+  run-katalon:
+    runs-on: windows-latest  # có thể đổi sang macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run Katalon tests
+        uses: katalon-studio/katalon-studio-github-action@v4.0
+        with:
+          # Chọn phiên bản KRE tương thích (khớp major với Studio bạn dùng)
+          version: "10.4.3"
+          projectPath: "${{ github.workspace }}"
+          args: >
+            -noSplash
+            -retry=0
+            -testSuitePath="Test Suites/Shopping-cart-tests - Run All Test Suites.ts"
+            -browserType="Chrome (headless)"
+            -executionProfile="default"
+            -apiKey=${{ secrets.KATALON_API_KEY }}
+            --config -webui.autoUpdateDrivers=true
+
+      - name: Upload Katalon Reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: katalon-reports
+          path: |
+            Reports/**
+            .katalon/**/console.log
