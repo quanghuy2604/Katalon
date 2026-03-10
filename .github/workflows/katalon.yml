@@ -19,7 +19,7 @@ jobs:
         with:
           # Chọn phiên bản KRE tương thích (khớp major với Studio bạn dùng)
           version: "10.4.3"
-          projectPath: "${{ github.workspace }}"
+          projectPath: "shopping-cart-tests.prj"
           args: >
             -noSplash
             -retry=0
