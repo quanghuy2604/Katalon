@@ -23,7 +23,7 @@ jobs:
           args: >
             -noSplash
             -retry=0
-            -testSuitePath="Test Suites/TC_Regressiontest"
+            -testSuiteCollectionPath="Test Suites/TC_Regressiontest"
             -browserType="Chrome (headless)"
             -executionProfile="default"
             -apiKey=${{ secrets.KATALON_API_KEY }}
